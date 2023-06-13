@@ -1,0 +1,8 @@
+<div style="width: 300px">
+  <p>input-binding-name works!</p>
+  <h1>{{name}}</h1>
+  <div style="display: flex; flex-direction: column">
+    <input style="border-radius: 10px; margin-bottom:10px; width: 200px" [(ngModel)]="name" type="text" (input)="isEmpty()">
+    <button style="width: 100px; color: coral; background-color: cornsilk; border-radius: 10px" [disabled]="isEmptyName" (click)="resetName()">reset name</button>
+  </div>
+</div>

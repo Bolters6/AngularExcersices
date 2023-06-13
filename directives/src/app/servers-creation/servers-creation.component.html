@@ -1,0 +1,25 @@
+<h1>Servers</h1>
+<input [(ngModel)]="nameServer" style="width: 10%; height: 25px; border-radius: 35%">
+<button (click)="creationServer()" style="margin-left: 1%; border-radius: 30%">Create Server </button>
+<p *ngIf="nameServer.length > 0">server: {{nameServer}} was created</p>
+<table>
+  <thead>
+  <th>server name</th>
+  <th>creation date</th>
+  <th>status</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let server of servers; index as i" [ngClass]="">
+    <td>
+      {{server.name}}
+    </td>
+    <td>
+      {{server.creationDate}}
+    </td>
+    <td [ngStyle]="{'color': server.status === 'off' ? 'red' : 'green'}" >
+      {{server.status}}
+    </td>
+  </tr>
+  </tbody>
+</table>
+
